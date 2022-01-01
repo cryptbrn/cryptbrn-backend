@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/cryptbrn/cryptbrn-backend/delivery/http"
 	"github.com/cryptbrn/cryptbrn-backend/loader"
 	"github.com/gin-gonic/gin"
@@ -12,5 +14,5 @@ func main() {
 
 	http.Ping(r)
 
-	r.Run(":8000")
+	r.Run(":" + os.Getenv("PORT"))
 }
